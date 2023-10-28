@@ -12,11 +12,12 @@ export function changeToDoStatus (todo) {
     }
 }
 
-/* //// deploy projects in screen
-    take a project
-    take and deploy project array
-    make it show in screen
-*/ 
+/* clear content of container */
+export function clearContainer (div) {
+    div.innerHTML="";
+}
+
+/* //// deploy projects in screen */ 
 export function deployProjects (array,div) { 
     let todosDiv = document.querySelector(".todos");
     for (let i=0; i<array.length; i++) { 
@@ -37,18 +38,15 @@ export function deployProjects (array,div) {
             const divs = document.querySelectorAll(".projectContainer");
             divs.forEach( (div)=> div.classList.remove("selectedProject"));
             container.classList.add("selectedProject");
-            //deploy ToDos of project using i
+
+            clearContainer(todosDiv)
             deployToDos(array[i],todosDiv);
         });
     }
 }
 
-/* //// deploy toDos of a project in screen 
-    take a project, 
-    take a container,
-*/
+/* //// deploy toDos of a project in screen */
 export function deployToDos (project,div) {
-    div.innerHTML="";
     for (let i=0; i<project.toDos.length; i++) {
         let container = document.createElement("div");
         container.classList.add("todoContainer");
@@ -66,5 +64,15 @@ export function deployToDos (project,div) {
         todoDate.classList.add("todoDate");
         todoDate.textContent=project.toDos[i].date;
         container.appendChild(todoDate);
+        let priority = document.createElement("div");
+
     }
 }
+
+export function deployAllToDos (array,div) {
+    clearContainer(div);
+   for (let i=0; i<array.length; i++) {
+        deployToDos(array[i],div);
+    } 
+}
+
