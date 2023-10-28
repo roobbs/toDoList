@@ -1,3 +1,40 @@
+:root{
+    --fst-color: #74869d; 
+    --snd-color: #181818;
+    --trd-color: #171834;
+    --fth-color:#ffffff;
+    --sxt-color: #ffffff;
+}
 body{
-    background-color: cornflowerblue;
+    background-color: var(--fst-color);
+    color: white;
+    height: 100vh;
+    margin: 0;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    font-family: monospace;
+}
+.header{
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 900;
+}
+.main{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+.sidebar{
+    background-color: var(--trd-color);
+    border-top-right-radius: 20px;
+    padding: 1rem;
+}
+.content{
+    background-color: var(--sxt-color);
+    color: black;
+    border-top-left-radius: 30px;
+    padding: 1rem;
+}
+.title{
+    font-size: 2rem;
+    font-weight: 900;
 }
