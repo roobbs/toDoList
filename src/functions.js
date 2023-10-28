@@ -17,5 +17,54 @@ export function changeToDoStatus (todo) {
     take and deploy project array
     make it show in screen
 */ 
+export function deployProjects (array,div) { 
+    let todosDiv = document.querySelector(".todos");
+    for (let i=0; i<array.length; i++) { 
+        let container = document.createElement("div");
+        container.classList.add("projectContainer");
+        div.appendChild(container);
+        
+        let projectName = document.createElement("div");
+        projectName.classList.add("projectName");
+        projectName.textContent=array[i].name;
+        container.appendChild(projectName);
+        let projectDesc = document.createElement("div");
+        projectDesc.classList.add("projectDesc");
+        projectDesc.textContent= array[i].description;
+        container.appendChild(projectDesc);
 
-/* d */
+        container.addEventListener("click", ()=> {
+            const divs = document.querySelectorAll(".projectContainer");
+            divs.forEach( (div)=> div.classList.remove("selectedProject"));
+            container.classList.add("selectedProject");
+            //deploy ToDos of project using i
+            deployToDos(array[i],todosDiv);
+        });
+    }
+}
+
+/* //// deploy toDos of a project in screen 
+    take a project, 
+    take a container,
+*/
+export function deployToDos (project,div) {
+    div.innerHTML="";
+    for (let i=0; i<project.toDos.length; i++) {
+        let container = document.createElement("div");
+        container.classList.add("todoContainer");
+        div.appendChild(container);
+
+        let btn = document.createElement("button");
+        btn.classList.add("todoCheck");
+        btn.textContent="❌";
+        container.appendChild(btn);
+        let todoName = document.createElement("div");
+        todoName.classList.add("todoName");
+        todoName.textContent=project.toDos[i].name;
+        container.appendChild(todoName);
+        let todoDate = document.createElement("div");
+        todoDate.classList.add("todoDate");
+        todoDate.textContent=project.toDos[i].date;
+        container.appendChild(todoDate);
+    }
+}

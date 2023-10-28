@@ -1,9 +1,8 @@
 :root{
-    --fst-color: #74869d; 
-    --snd-color: #181818;
-    --trd-color: #171834;
-    --fth-color:#ffffff;
-    --sxt-color: #ffffff;
+    --fst-color: #d2ebfe;
+    --snd-color: #212187;
+    --trd-color: #0f0f20;
+    --fth-color:#ffffff; 
 }
 body{
     background-color: var(--fst-color);
@@ -18,6 +17,7 @@ body{
     text-align: center;
     font-size: 1.8rem;
     font-weight: 900;
+    color: var(--snd-color);
 }
 .main{
     display: grid;
@@ -29,12 +29,74 @@ body{
     padding: 1rem;
 }
 .content{
-    background-color: var(--sxt-color);
-    color: black;
+    background-color: var(--fth-color);
+    color: var(--trd-color);
     border-top-left-radius: 30px;
     padding: 1rem;
 }
 .title{
     font-size: 2rem;
+    font-weight: 900;
+    padding-bottom: 1.5rem;
+}
+.projects{
+    display: grid;
+    gap: 1rem;
+}
+.projectContainer{
+    background-color: #3a4a65;
+    border: 2px solid var(--fth-color);
+    border-radius: 6px;
+    display: grid;
+    gap: .5rem;
+    justify-items: end;
+    padding: 8px;
+}
+.sidebar .projects .projectContainer:hover{
+    background-color: #283647;
+}
+.projectName{
+    font-weight: 900;
+    font-size: 1.5rem;
+    text-align:center;
+}
+.projectDesc{
+    font-family: Arial, sans-serif;
+    color: var(--fth-color);
+    font-size: 1.1rem;
+    font-style: italic;
+    text-align: justify;
+}
+.selectedProject{
+    background-color: var(--snd-color);
+}
+/***********************************************/
+.todos{
+    display: grid;
+    gap: 1.2rem;
+}
+.todoContainer{
+    background-color: var(--fst-color);
+    border-radius: 10px;
+    padding: 5px;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    padding-right: 2rem;
+}
+.todoContainer:hover{
+    background-color: var(--snd-color);
+    color: var(--fth-color);
+}
+.todoCheck{
+    height: 1.6rem;
+    width: 1.6rem;
+    padding: 2px;
+    text-align: center;
+    background-color: var(--trd-color);
+    border-radius: 50%;
+}
+.todoName{
+    font-size: 1.2rem;
     font-weight: 900;
 }
