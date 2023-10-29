@@ -24,7 +24,7 @@ export function deployProjects (array,div) {
         let container = document.createElement("div");
         container.classList.add("projectContainer");
         div.appendChild(container);
-        
+
         let projectName = document.createElement("div");
         projectName.classList.add("projectName");
         projectName.textContent=array[i].name;
@@ -42,11 +42,21 @@ export function deployProjects (array,div) {
             clearContainer(todosDiv)
             deployToDos(array[i],todosDiv);
         });
+
+        let dlt = document.createElement("button");
+        dlt.classList.add("deleteProject");
+        dlt.textContent="🗑";
+        container.appendChild(dlt);
+        dlt.addEventListener("click", ()=> {
+            array.splice(i,1);
+                clearContainer(div);
+                deployProjects(array,div);
+        });
     }
 }
 
 /* //// deploy toDos of a project in screen */
-export function deployToDos (project,div) {
+export function deployToDos (project,div,createBtn=false) {
     for (let i=0; i<project.toDos.length; i++) {
         let container = document.createElement("div");
         container.classList.add("todoContainer");
@@ -57,9 +67,11 @@ export function deployToDos (project,div) {
         if(project.toDos[i].status===false) {
             btn.textContent= "❌";
             btn.classList.add("false");
+            container.style.opacity= "1";
         } else {
             btn.textContent= "✔";
             btn.classList.add("true");
+            container.style.opacity= ".5";
         }
         container.appendChild(btn);
         let todoName = document.createElement("div");
@@ -95,14 +107,26 @@ export function deployToDos (project,div) {
                 btn.classList.remove("true");
                 container.style.opacity= "1";
             }
-        })
+        });
+        if(createBtn===false) {
+            let dlt = document.createElement("button");
+            dlt.classList.add("deleteTask");
+            dlt.textContent="🗑";
+            container.appendChild(dlt);
+            dlt.addEventListener("click", ()=> {
+                project.toDos.splice(i,1);
+                clearContainer(div);
+                deployToDos(project,div);
+            });
+        }
+        
     }
 }
 
 export function deployAllToDos (array,div) {
     clearContainer(div);
    for (let i=0; i<array.length; i++) {
-        deployToDos(array[i],div);
+        deployToDos(array[i],div,true);
     } 
 }
 

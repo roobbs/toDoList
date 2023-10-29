@@ -84,10 +84,12 @@ body{
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     border-right: none;
+    position: relative;
 }
 .projectContainer:hover{
     background-color: var(--snd-color);
     color: var(--fth-color);
+    position: relative;
 }
 .projectName{
     font-weight: 900;
@@ -99,6 +101,7 @@ body{
     font-size: 1.1rem;
     font-style: italic;
     text-align: center;
+    margin-left: 1.4rem;
 }
 .selectedProject{
     background-color: var(--fth-color);
@@ -149,4 +152,23 @@ body{
     font-size: 1.2rem;
     font-weight: 900;
     flex: 1;
+}
+/*//**********************************************/
+.deleteTask{
+    background-color: rgb(255, 144, 144);
+    border: none;
+    border-radius: 6px;
+    font-size: 1.2rem;
+}
+.deleteProject{
+    background-color: rgb(255, 144, 144);
+    border: none;
+    border-radius: 6px;
+    font-size: 1.2rem;
+    position: absolute;
+    bottom: 3%;
+    left: 3%;
+}
+.deleteProject:hover, .deleteTask:hover{
+    background-color: rgb(255, 48, 48);
 }
