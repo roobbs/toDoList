@@ -87,11 +87,13 @@ export function deployToDos (project,div) {
                 btn.textContent= "✔";
                 btn.classList.add("true");
                 btn.classList.remove("false");
+                container.style.opacity= ".5";
             } else {
                 changeToDoStatus(project.toDos[i]);
                 btn.textContent= "❌";
                 btn.classList.add("false");
                 btn.classList.remove("true");
+                container.style.opacity= "1";
             }
         })
     }
