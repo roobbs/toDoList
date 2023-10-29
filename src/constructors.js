@@ -7,14 +7,12 @@
 */
 
 //eliminate default values if not used
-export function createToDo (todoTitle, todoDate="today", todoPriority=0, project) {
+export function createToDo (todoTitle, todoDate, todoPriority, project) {
     const name = todoTitle;
     const date = todoDate;
     const priority = todoPriority;
-    const belongTo = project;//might delete
     const status = false;
-
-    return {name, date, priority, belongTo, status};
+    return {name, date, priority, status};
 }
 
 /* //// constructor Project 

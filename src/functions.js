@@ -54,7 +54,13 @@ export function deployToDos (project,div) {
 
         let btn = document.createElement("button");
         btn.classList.add("todoCheck");
-        btn.textContent="❌";
+        if(project.toDos[i].status===false) {
+            btn.textContent= "❌";
+            btn.classList.add("false");
+        } else {
+            btn.textContent= "✔";
+            btn.classList.add("true");
+        }
         container.appendChild(btn);
         let todoName = document.createElement("div");
         todoName.classList.add("todoName");
@@ -64,8 +70,30 @@ export function deployToDos (project,div) {
         todoDate.classList.add("todoDate");
         todoDate.textContent=project.toDos[i].date;
         container.appendChild(todoDate);
-        let priority = document.createElement("div");
-
+        switch (project.toDos[i].priority) {
+            case "low":
+                container.style.borderLeft = "8px solid green";
+            break;
+            case "medium":
+                container.style.borderLeft = "8px solid #ffcc00";
+            break;
+            case "high":
+                container.style.borderLeft = "8px solid #c40000";
+            break;
+        }
+        btn.addEventListener("click", ()=> {
+            if(project.toDos[i].status===false) {
+                changeToDoStatus(project.toDos[i]);
+                btn.textContent= "✔";
+                btn.classList.add("true");
+                btn.classList.remove("false");
+            } else {
+                changeToDoStatus(project.toDos[i]);
+                btn.textContent= "❌";
+                btn.classList.add("false");
+                btn.classList.remove("true");
+            }
+        })
     }
 }
 

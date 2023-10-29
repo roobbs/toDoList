@@ -10,9 +10,9 @@ let todosDiv = document.querySelector(".todos");
 console.log("HI");
 let projectExample = createProject("Project Example 1","This is description 1");
 projects.push(projectExample)
-let todoExample = createToDo("Task 1 for project 1", "today", 0, projectExample.name);
+let todoExample = createToDo("Task 1 for project 1", "today", "low", projectExample.name);
 pushToDo(projectExample,todoExample);
-let todoExample1 = createToDo("Task 2 for project 1", "today", 0, projectExample.name);
+let todoExample1 = createToDo("Task 2 for project 1", "today", "medium", projectExample.name);
 pushToDo(projectExample,todoExample1);
 console.log(projectExample);////
 //EXAMPLE0
@@ -20,9 +20,9 @@ console.log(projectExample);////
 console.log("HI");
 let anotherProjectExample = createProject("Another Project Example","This is description 2");
 projects.push(anotherProjectExample)
-let anotherTodoExample = createToDo("Task 1 for Project 2", "today", 0, anotherProjectExample.name);
+let anotherTodoExample = createToDo("Task 1 for Project 2", "today", "high", anotherProjectExample.name);
 pushToDo(anotherProjectExample,anotherTodoExample);
-let anotherTodoExample1 = createToDo("Task 2 for Project 2", "today", 0, anotherProjectExample.name);
+let anotherTodoExample1 = createToDo("Task 2 for Project 2", "today", "low", anotherProjectExample.name);
 pushToDo(anotherProjectExample,anotherTodoExample1);
 console.log(anotherProjectExample);////
 //EXAMPLE0
