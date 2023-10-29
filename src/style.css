@@ -6,7 +6,7 @@
     --example: #31b700;
 }
 body{
-    background-color: var(--fst-color);
+    background-color: var(--trd-color);
     color: white;
     min-height: 100vh;
     margin: 0;
@@ -18,7 +18,7 @@ body{
     text-align: center;
     font-size: 1.8rem;
     font-weight: 900;
-    color: var(--snd-color);
+    color: var(--fst-color);
     padding: .2rem;
 }
 .main{
@@ -35,6 +35,7 @@ body{
     background-color: var(--fth-color);
     color: var(--trd-color);
     border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
     padding: 1.5rem;
     padding-left: 2rem;
 }
