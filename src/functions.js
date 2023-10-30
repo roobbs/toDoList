@@ -21,9 +21,13 @@ export function clearContainer (div) {
 export function deployProjects (array,div) { 
     let todosDiv = document.querySelector(".todos");
     for (let i=0; i<array.length; i++) { 
+        let bigCont = document.createElement("div");
+        bigCont.classList.add("bigProjectContainer");
+        div.appendChild(bigCont);
+
         let container = document.createElement("div");
         container.classList.add("projectContainer");
-        div.appendChild(container);
+        bigCont.appendChild(container);
 
         let projectName = document.createElement("div");
         projectName.classList.add("projectName");
@@ -33,7 +37,7 @@ export function deployProjects (array,div) {
         projectDesc.classList.add("projectDesc");
         projectDesc.textContent= array[i].description;
         container.appendChild(projectDesc);
-
+        
         container.addEventListener("click", ()=> {
             const divs = document.querySelectorAll(".projectContainer");
             divs.forEach( (div)=> div.classList.remove("selectedProject"));
@@ -42,16 +46,24 @@ export function deployProjects (array,div) {
             clearContainer(todosDiv)
             deployToDos(array[i],todosDiv);
         });
-
+        /*la solucion es crear un contenedor en el que se pueda dar click 
+        al boton dlt ya que al estar dentro se esta dando click tambien al contenedor
+        y eso causa un mal comportamiento*/
         let dlt = document.createElement("button");
         dlt.classList.add("deleteProject");
         dlt.textContent="🗑";
-        container.appendChild(dlt);
+        bigCont.appendChild(dlt);
+        
         dlt.addEventListener("click", ()=> {
-            array.splice(i,1);
+                array.splice(i,1);
                 clearContainer(div);
+                console.log(div);
+                console.log(array);
                 deployProjects(array,div);
+                let newDiv = document.querySelector(".todos");
+                deployAllToDos(array,newDiv);
         });
+        
     }
 }
 
@@ -129,4 +141,3 @@ export function deployAllToDos (array,div) {
         deployToDos(array[i],div,true);
     } 
 }
-

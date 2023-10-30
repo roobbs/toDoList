@@ -1,6 +1,5 @@
-/*import { createProject } from "./constructors";
-import { deployProjects } from "./functions";
-import { projects } from "./";
+import { createProject } from "./constructors";
+import { clearContainer, deployProjects } from "./functions";
 
 export let addProjectEvent = function (array,div) {
     let dialog = document.querySelector(".projectDialog"); //open dialog
@@ -14,15 +13,16 @@ export let addProjectEvent = function (array,div) {
     });
     let projectName = document.querySelector("#project-title");
     let projectDesc = document.querySelector("#project-description");
-    let submit = document.querySelector(".addProject").addEventListener("submit", (event) => {
+    let submit = document.querySelector(".project-form").addEventListener("submit", (event) => {
         event.preventDefault();
         if (event.target.checkValidity()) {
             array.push(createProject(projectName.value,projectDesc.value));
+            clearContainer(div);
             deployProjects(array,div);
             console.log(btnDialog);
             projectName.value="";
             projectName.value="";
+            dialog.close();
         }
     });
-}
-*/
+};

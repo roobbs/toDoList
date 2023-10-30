@@ -101,7 +101,7 @@ body{
     font-family: Arial, sans-serif;
     font-size: 1.1rem;
     font-style: italic;
-    text-align: center;
+    text-align: justify;
     margin-left: 1.4rem;
 }
 .selectedProject{
@@ -111,6 +111,9 @@ body{
 }
 .allTasks{
     margin-bottom: 2rem;
+}
+.bigProjectContainer{
+    position: relative;
 }
 /***********************************************/
 .todos{
@@ -172,4 +175,62 @@ body{
 }
 .deleteProject:hover, .deleteTask:hover{
     background-color: rgb(255, 48, 48);
+}
+/*  ****************************************************  */
+.dialog::backdrop{
+    background-color: rgb(27, 27, 27);
+    opacity: .8;
+}
+.dialog{
+    border-radius: 10px;
+    font-size: 1.4rem;
+    border: 2px solid var(--snd-color);
+}
+.form{
+    display: grid;
+    gap: 1rem;
+}
+.form-title{
+    color: var(--trd-color);
+    font-weight: 900;
+    text-align: center;
+}
+.form-row{
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    color: var(--snd-color);
+}
+.form-row input{
+    border: 2px solid var(--trd-color);
+    border-radius: 5px;
+    color: var(--snd-color);
+}
+.btnAdd{
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+.add{
+    flex: 2;
+    background-color: var(--snd-color);
+    border-radius: 5px;
+    border: none;
+    color: var(--fth-color);
+    font-weight: 600;
+    padding: .2rem;
+}
+.close{
+    flex: 1;
+    background-color: rgb(255, 81, 81);
+    border-radius: 5px;
+    border: none;
+    color: var(--fth-color);
+    font-weight: 600;
+}
+.add:hover{
+    background-color: var(--trd-color);
+}
+.close:hover{
+    background-color: rgb(255, 40, 40);
 }
