@@ -1,7 +1,7 @@
 import './style.css';
 import {createProject,createToDo} from './constructors.js';
 import { pushToDo,changeToDoStatus,deployProjects,deployToDos, deployAllToDos } from './functions';
-import { addProjectEvent } from './modal';
+import { addProjectEvent, addToDoEvent } from './modal';
 
 export let projects = []; ///array of projects
 let projectsDiv = document.querySelector(".projects");
@@ -41,3 +41,4 @@ deployProjects(projects,projectsDiv);
 deployAllToDos(projects,todosDiv);
 
 addProjectEvent(projects,projectsDiv);
+addToDoEvent();

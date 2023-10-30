@@ -206,6 +206,11 @@ body{
     border-radius: 5px;
     color: var(--snd-color);
 }
+.form-row select{
+    border: 2px solid var(--trd-color);
+    border-radius: 5px;
+    color: var(--snd-color);
+}
 .btnAdd{
     display: flex;
     justify-content: space-between;

@@ -46,9 +46,6 @@ export function deployProjects (array,div) {
             clearContainer(todosDiv)
             deployToDos(array[i],todosDiv);
         });
-        /*la solucion es crear un contenedor en el que se pueda dar click 
-        al boton dlt ya que al estar dentro se esta dando click tambien al contenedor
-        y eso causa un mal comportamiento*/
         let dlt = document.createElement("button");
         dlt.classList.add("deleteProject");
         dlt.textContent="🗑";
