@@ -7,7 +7,7 @@
 */
 
 //eliminate default values if not used
-export function createToDo (todoTitle, todoDate, todoPriority, project) {
+export function createToDo (todoTitle, todoDate, todoPriority) {
     const name = todoTitle;
     const date = todoDate;
     const priority = todoPriority;

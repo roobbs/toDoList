@@ -11,9 +11,9 @@ let todosDiv = document.querySelector(".todos");
 console.log("HI");
 let projectExample = createProject("Project Example 1","This is description 1");
 projects.push(projectExample)
-let todoExample = createToDo("Task 1 for project 1", "today", "low", projectExample.name);
+let todoExample = createToDo("Task 1 for project 1", "today", "low");
 pushToDo(projectExample,todoExample);
-let todoExample1 = createToDo("Task 2 for project 1", "today", "medium", projectExample.name);
+let todoExample1 = createToDo("Task 2 for project 1", "today", "medium");
 pushToDo(projectExample,todoExample1);
 console.log(projectExample);////
 //EXAMPLE0
@@ -41,4 +41,4 @@ deployProjects(projects,projectsDiv);
 deployAllToDos(projects,todosDiv);
 
 addProjectEvent(projects,projectsDiv);
-addToDoEvent();
+addToDoEvent(projects);
