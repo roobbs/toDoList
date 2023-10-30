@@ -73,6 +73,7 @@ body{
 .projects{
     display: grid;
     gap: 1rem;
+    margin-bottom: 120px;
 }
 .projectContainer{
     background-color: #3a4a65;
@@ -119,6 +120,7 @@ body{
 .todos{
     display: grid;
     gap: 1.2rem;
+    margin-bottom: 120px;
 }
 .todoContainer{
     background-color: var(--fst-color);

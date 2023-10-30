@@ -33,7 +33,7 @@ export let addProjectEvent = function (array,div) {
 
 
 /* MODAL FOR TO DO */
-export let addToDoEvent = function (array,div) {
+export let addToDoEvent = function (array) {
     let dialog = document.querySelector(".todoDialog");
     let btnDialog = document.querySelector(".addTaskBtn");
     btnDialog.addEventListener("click", () => {
@@ -43,7 +43,7 @@ export let addToDoEvent = function (array,div) {
     btnClose.addEventListener("click", () => {
         todoName.value="";
         todoDate.value="";
-        todoPriority.value="Low";
+        todoPriority.value="low";
         dialog.close();
     });
 
@@ -73,11 +73,11 @@ export let addToDoEvent = function (array,div) {
             console.log(newProject.toDos)
             let newDiv = document.querySelector(".todos");
             clearContainer(newDiv);
-            deployAllToDos(newProject,newDiv);
+            deployAllToDos(array,newDiv);
             
             todoName.value="";
             todoDate.value="";
-            todoPriority.value="Low";
+            todoPriority.value="low";
             dialog.close();
         }
     });
