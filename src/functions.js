@@ -44,7 +44,7 @@ export function deployProjects(array, div) {
             container.classList.add("selectedProject");
 
             clearContainer(todosDiv)
-            deployToDos(array[i], todosDiv);
+            deployToDos(array[i], todosDiv, array);
         });
         let dlt = document.createElement("button");
         dlt.classList.add("deleteProject");
@@ -68,7 +68,7 @@ export function deployProjects(array, div) {
 }
 
 /* //// deploy toDos of a project in screen */
-export function deployToDos(project, div, createBtn = false) {
+export function deployToDos(project, div, array, createBtn = false) {
     for (let i = 0; i < project.toDos.length; i++) {
         let container = document.createElement("div");
         container.classList.add("todoContainer");
@@ -112,12 +112,16 @@ export function deployToDos(project, div, createBtn = false) {
                 btn.classList.add("true");
                 btn.classList.remove("false");
                 container.style.opacity = ".5";
+                let projectsToJson = JSON.stringify(array);
+                localStorage.setItem('projects', projectsToJson);
             } else {
                 changeToDoStatus(project.toDos[i]);
                 btn.textContent = "❌";
                 btn.classList.add("false");
                 btn.classList.remove("true");
                 container.style.opacity = "1";
+                let projectsToJson = JSON.stringify(array);
+                localStorage.setItem('projects', projectsToJson);
             }
         });
         if (createBtn === false) {
@@ -128,7 +132,9 @@ export function deployToDos(project, div, createBtn = false) {
             dlt.addEventListener("click", () => {
                 project.toDos.splice(i, 1);
                 clearContainer(div);
-                deployToDos(project, div);
+                deployToDos(project, div, array);
+                let projectsToJson = JSON.stringify(array);
+                localStorage.setItem('projects', projectsToJson);
             });
         }
 
@@ -138,6 +144,6 @@ export function deployToDos(project, div, createBtn = false) {
 export function deployAllToDos(array, div) {
     clearContainer(div);
     for (let i = 0; i < array.length; i++) {
-        deployToDos(array[i], div, true);
+        deployToDos(array[i], div, array, true);
     }
 }
