@@ -1,72 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>&lt;To Do List&gt;</title>
-</head>
-<body>
+  </head>
+  <body>
     <header class="header">&lt;To Do List&gt;</header>
     <main class="main">
-        <div class="sidebar">
-            <div class="title">&lt;Projects&gt;</div>
-            <div class="projectContainer allTasks selectedProject">
-                    <div class="projectName">All Tasks</div>
-            </div>
-            <div class="projects"></div>
-            <button class="addProjectBtn">+Project</button>
+      <div class="sidebar">
+        <div class="title">&lt;Projects&gt;</div>
+        <div class="projectContainer allTasks selectedProject">
+          <div class="projectName">All Tasks</div>
         </div>
-        <div class="content">
-            <div class="title">TO DO'S</div>
-            <div class="todos"></div>
-            <button class="addTaskBtn">+Task</button>
-        </div>
+        <div class="projects"></div>
+        <button class="addProjectBtn">+Project</button>
+      </div>
+      <div class="content">
+        <div class="title">TO DO'S</div>
+        <div class="todos"></div>
+        <button class="addTaskBtn">+Task</button>
+      </div>
     </main>
     <dialog class="projectDialog dialog">
-        <form action="" method="dialog" class="project-form form">
-            <div class="form-title">Add Project</div>
-            <div class="form-row">
-                <label for="project-title">Title</label>
-                <input type="text" id="project-title" name="project-title" required>
-            </div>
-            <div class="form-row">
-                <label for="project-description">Description</label>
-                <input type="text" id="project-description" name="project-description" required>
-            </div>
-            <div class="btnAdd">
-                <button class="sumbitProject add">Add Project</button>
-                <button class="closeProject close">Cancel</button>
-            </div>
-        </form>
+      <form action="" method="dialog" class="project-form form">
+        <div class="form-title">Add Project</div>
+        <div class="form-row">
+          <label for="project-title">Title</label>
+          <input type="text" id="project-title" name="project-title" required />
+        </div>
+        <div class="form-row">
+          <label for="project-description">Description</label>
+          <input
+            type="text"
+            id="project-description"
+            name="project-description"
+            required
+          />
+        </div>
+        <div class="btnAdd">
+          <button class="sumbitProject add">Add Project</button>
+          <button class="closeProject close">Cancel</button>
+        </div>
+      </form>
     </dialog>
     <dialog class="todoDialog dialog">
-        <form action="" method="dialog" class="todo-form form">
-            <div class="form-title">Add Task</div>
-            <div class="form-row">
-                <label for="todo-title">Title</label>
-                <input type="text" id="todo-title" name="todo-title" required>
-            </div>
-            <div class="form-row">
-                <label for="todo-date">Due Date</label>
-                <input type="date" id="todo-date" name="todo-date" required>
-            </div>
-            <div class="form-row">
-                <label for="todo-priority">Priority</label>
-                <select name="todo-priority" id="todo-priority"> 
-                    <option value="low">Low</option>
-                    <option value="medium">Medium</option>
-                    <option value="high">High</option>
-                </select>
-            </div>
-            <div class="form-row">
-                <label for="todo-project">Project</label>
-                <select name="todo-project" id="todo-project"></select>
-            </div>
-            <div class="btnAdd">
-                <button class="sumbitTask add">Add Task</button>
-                <button class="closeTask close">Cancel</button>
-            </div>
-        </form>
+      <form action="" method="dialog" class="todo-form form">
+        <div class="form-title">Add Task</div>
+        <div class="form-row">
+          <label for="todo-title">Title</label>
+          <input type="text" id="todo-title" name="todo-title" required />
+        </div>
+        <div class="form-row">
+          <label for="todo-date">Due Date</label>
+          <input type="date" id="todo-date" name="todo-date" required />
+        </div>
+        <div class="form-row">
+          <label for="todo-priority">Priority</label>
+          <select name="todo-priority" id="todo-priority">
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="todo-project">Project</label>
+          <select name="todo-project" id="todo-project"></select>
+        </div>
+        <div class="btnAdd">
+          <button class="sumbitTask add">Add Task</button>
+          <button class="closeTask close">Cancel</button>
+        </div>
+      </form>
     </dialog>
-</body>
+  </body>
 </html>
